@@ -1,0 +1,131 @@
+.catalog {
+
+  &__container, &__top {
+    display: flex;
+    flex-direction: column;    
+  }
+
+  &__container {
+    gap: 5rem;
+  }
+
+  &__top {
+    width: 100%;
+    gap: 2rem;
+
+    > * {
+      text-align: center;
+      color: var(--primary-black-clr);
+    }
+
+    > h1 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 120%;
+      letter-spacing: -0.03em;
+
+      > span {
+        position: relative;
+        color: var(--primary-purple-clr);
+        padding: 1rem;
+        > img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120%;
+          height: 150%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    > p {
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 130%;
+      opacity: 0.6;
+    }
+  }
+
+  &__bottom {
+    width: 100%;
+
+    &-slide {
+      box-shadow: 0 0 2rem rgba($color: #000000, $alpha: .1);
+      padding: 2rem;
+
+      &_element {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        &-info {
+
+          > h1, > p {
+            color: var(--primary-black-clr);
+          }
+
+          > h1 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+          }
+
+          > p { 
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            opacity: 0.6;
+
+            margin: 1rem 0;
+          }
+
+          &_details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-price {
+              display: flex;
+              gap: 1rem;
+
+              > h2 {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                color: var(--primary-black-clr);
+              }
+
+              > p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 130%;
+                color: var(--primary-black-clr);
+                opacity: 0.6;
+              }
+            }
+
+            &-order {
+              background: var(--purple-light-clr);
+              color: var(--primary-purple-clr);
+              opacity: 0.8;
+              border-radius: 4px;
+              font-weight: 400;
+              font-size: 1.8rem;
+              line-height: 130%;
+              text-align: center;
+              padding: .5rem 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

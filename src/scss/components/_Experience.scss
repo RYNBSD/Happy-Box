@@ -1,0 +1,107 @@
+@use "../tools/mixins" as *;
+.experience {
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    column-gap: 5rem;
+  }
+
+  &__left, &__right, &__left > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__left > img, &__right {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__left {
+    position: relative;
+
+    &-bg {
+      position: absolute;
+      top: 20%;
+      left: 30%;
+      z-index: 0;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(84.46% 51.78% at 49.16% 50.49%, #4076FF 0%, #FFFFFF 53.65%);
+      opacity: 0.2;
+    }
+
+    > img {
+      object-fit: contain;
+    }
+  }
+
+  &__right {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    > h1 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 120%;
+      letter-spacing: -0.03em;
+      color: var(--primary-black-clr);
+    }
+
+    &-elements {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &_element {
+        display: flex;
+        gap: 2rem;
+
+        &-icon {
+          width: fit-content;
+          height: fit-content;
+
+          padding: 1.5rem;
+          border-radius: 1rem;
+
+          background-color: var(--primary-white-clr);
+          box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: .1);
+        }
+
+        &-info {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          > h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            color: var(--primary-black-clr);
+          }
+
+          > p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            color: var(--primary-black-clr);
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  @include mediaQueryMax($mediumScreen) {
+    &__container {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 5rem;
+    }
+  }
+}

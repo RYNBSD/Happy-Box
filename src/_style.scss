@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  &, &::before, &::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+}
+
+:root {
+
+  --primary-white-clr: #FFFFFF;
+  --primary-black-clr: #232938;
+  --primary-purple-clr: #7F74FF;
+  --peach-clr: #FFE0CF;
+  --pink-clr: #FFCFEC;
+  --purple-light-clr: #D7CFFF;
+  --blue-light-clr: #CFE2FF;
+  --red-clr: #F35050;
+  --success-clr: #34C174;
+
+  --medium-screen: 80rem;
+  --small-screen: 40rem;
+}
+
+$mediumScreen: 80rem;
+$smallScreen: 40rem;
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--primary-white-clr);
+}
+
+input, button, textarea {
+  border: none;
+}
+
+input, textarea {
+  outline: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button, a {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.f-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.nav, .header, .advantage, .experience, .description, .catalog, .subscribe, .reviews, .footer {
+  width: 100%;
+}
+
+@import "./scss/components/index";

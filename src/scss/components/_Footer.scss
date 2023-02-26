@@ -1,0 +1,145 @@
+@use "../tools/mixins" as *;
+
+.footer {
+
+  padding-top: 5rem;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    column-gap: 5rem;
+    
+    padding: 2rem 0;
+    border-top: .1rem solid var(--primary-purple-clr);
+  }
+
+  &__left {
+
+    > img {
+      object-fit: contain;
+    }
+
+    > p {
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 130%;
+      color: var(--primary-black-clr);
+      opacity: 0.8;
+      padding-top: 2rem;
+    }
+  }
+
+  &__mid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    > h2 {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      text-align: center;
+      color: var(--primary-black-clr);
+    }
+
+    &-form {
+      width: 100%;
+      border-bottom: .1rem solid var(--primary-purple-clr);
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+
+      svg {
+        font-size: 2rem;
+        color: var(--primary-purple-clr);
+      }
+
+      > input[type="email"] {
+        width: 80%;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+
+    > li {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      > p {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 130%;
+        text-align: right;
+        color: var(--primary-black-clr);
+        opacity: 0.6;
+      }
+
+      > svg {
+        font-size: 2rem;
+        color: var(--primary-purple-clr);
+      }
+    }
+  }
+
+  &__bottom {
+    background-color: var(--purple-light-clr);
+
+    > h1 {
+      padding: 2rem 0;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 130%;
+      text-align: center;
+      color: var(--primary-purple-clr);
+    }
+  }
+
+  @include mediaQueryMax($mediumScreen) {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5rem;
+    }
+
+    &__left {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      > p {
+        text-align: center;
+      }
+    }
+  }
+
+  @include mediaQueryMax($smallScreen) {
+    &__container {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+    }
+
+    &__left {
+      grid-column-start: initial;
+      grid-column-end: initial;
+    }
+
+    &__right {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

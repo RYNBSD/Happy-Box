@@ -1,0 +1,11 @@
+@mixin mediaQueryMax($screenWidth) {
+  @media screen and (max-width: #{$screenWidth}) {
+    @content;
+  }
+}
+
+@mixin mediaQueryMin($screenWidth) {
+  @media screen and (min-width: #{$screenWidth}) {
+    @content;
+  }
+}

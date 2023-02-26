@@ -1,0 +1,110 @@
+@use "../tools/mixins" as *;
+
+.advantage {
+
+  position: relative;
+  z-index: 1;
+  padding: 5rem 0;
+
+  &__container {
+    background-color: var(--primary-white-clr);
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: .1);
+  }
+
+  &__elements {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    column-gap: 5rem;
+    padding: 1rem;
+
+    &-element {
+      width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 30rem;
+
+      &_top {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+        align-items: end;
+        column-gap: 1rem;
+
+        > h1 {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 120%;
+          color: var(--primary-black-clr);
+        }
+
+        > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      > p {
+        width: 100%;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: var(--primary-black-clr);
+        opacity: 0.6;
+      }
+
+      @include mediaQueryMax($mediumScreen) {
+        & {
+          gap: 2rem;
+
+          &_top {
+            grid-template-columns: 1fr;
+            row-gap: 2rem;
+            place-items: center;
+  
+            > h1 {
+              font-size: 2rem;
+              order: 1;
+            }
+  
+            > img {
+              width: 10rem;
+              height: 10rem;
+            }
+          }
+  
+          > p {
+            text-align: center;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      @include mediaQueryMax($smallScreen) {
+        & {
+          > p {
+            font-size: 1.6rem;  
+          }
+        }
+      }
+    }
+    @include mediaQueryMax($mediumScreen) {
+      & {
+        column-gap: 2rem;
+      }
+    }
+
+    @include mediaQueryMax($smallScreen) {
+      & {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 5rem;
+      }
+    }
+  }
+}

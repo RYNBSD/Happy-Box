@@ -1,0 +1,98 @@
+@use "../tools/mixins" as *;
+
+.reviews {
+
+  &__container {
+    position: relative;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__review {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 2rem rgba($color: #000000, $alpha: .1);
+    background-color: var(--primary-white-clr);
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &-author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_info {
+        display: flex;
+        gap: 1rem;
+
+        > img {
+          object-fit: contain;
+        }
+
+        > p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: var(--primary-black-clr);
+          opacity: 0.6;
+        }
+      }
+
+      &_media {
+        display: flex;
+        gap: 1rem;
+
+        > svg {
+          color: var(--primary-purple-clr);
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &-msg {
+      > p {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 130%;
+        text-align: center;
+        color: var(--primary-black-clr);
+        opacity: 0.8;
+      }
+
+      @include mediaQueryMax($mediumScreen) {
+        & {
+          font-size: 1.6rem;
+          line-height: initial;
+        }
+      }
+    }
+
+    &-more {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      > button {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 130%;
+        text-align: right;
+        color: var(--primary-purple-clr);
+        opacity: 0.8;
+      }
+    }
+  }
+}
